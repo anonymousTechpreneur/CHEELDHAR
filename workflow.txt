@@ -1,0 +1,9 @@
+Backend
+1. Installed docker desktop 4.30.0
+2. Nvidia/pytorch image - nvcr.io/nvidia/pytorch:24.05-py3
+
+Frontend
+1. Created vrenv
+2. Installed Python 3.10.7
+3. Installed Flet using pip install flet
+4. 
