@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GSTSlip</class>
+ <widget class="QMainWindow" name="GSTSlip">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>798</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255))</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="DataEntryTableWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>140</y>
+      <width>801</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="cursor" stdset="0">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>true</bool>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <row>
+     <property name="text">
+      <string>1.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>2.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>3.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>4.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>5.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>6.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>7.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>8.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>9.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>10.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>11.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>12.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>13.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>14.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>15.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>16.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>17.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>18.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>19.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>20.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>21.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>22.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>23.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>24.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>25.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>26.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>27.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>28.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>29.</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>30.</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Product Name</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Product Specs</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>SKU No.</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Quantity</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Price/piece</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Discount</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Total Price</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Firm</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Comments</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+   </widget>
+   <widget class="QTimeEdit" name="timeInput">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>40</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="dateInput">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>960</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="FirmListWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>401</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Firm Select</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="SaveData">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>60</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DeleteData">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>0</y>
+      <width>81</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="PrintData">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>30</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Print</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="PaymentTableWidget">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>230</y>
+      <width>551</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string>Debit</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Credit</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Cash</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Online</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Borrowed</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Advance</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Total</string>
+     </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="AudioInputPushButton">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>100</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Audio Input</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="PaymentDetail">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>350</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Payment Details -&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="InvoiceBillNoLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Invoice Bill No. -</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="InvoiceBillNoEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;INA1CUST01012024&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="InvoiceDateLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Invoice Date</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="FirmGSTNoEdit">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>20</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;GST No. ADFEDSFSRSD&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FirmGSTNoLabel">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>0</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Firm GST No. -</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="FirmAddressEdit">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>70</y>
+      <width>251</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mahaveer Prasad Manoj Kumar, Uttaradha Bazar, Sardarshahar, Churu, Rajasthan, India, 331403, Mob no. 8696731092&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FirmAddressLabel">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>60</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Firm Address -</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="FirmListWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>430</y>
+      <width>401</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Customer Name</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </item>
+   </widget>
+   <zorder>DataEntryTableWidget</zorder>
+   <zorder>timeInput</zorder>
+   <zorder>dateInput</zorder>
+   <zorder>FirmListWidget</zorder>
+   <zorder>SaveData</zorder>
+   <zorder>DeleteData</zorder>
+   <zorder>PrintData</zorder>
+   <zorder>PaymentTableWidget</zorder>
+   <zorder>AudioInputPushButton</zorder>
+   <zorder>PaymentDetail</zorder>
+   <zorder>InvoiceBillNoLabel</zorder>
+   <zorder>InvoiceDateLabel</zorder>
+   <zorder>FirmGSTNoEdit</zorder>
+   <zorder>InvoiceBillNoEdit</zorder>
+   <zorder>FirmGSTNoLabel</zorder>
+   <zorder>FirmAddressEdit</zorder>
+   <zorder>FirmAddressLabel</zorder>
+   <zorder>FirmListWidget_2</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>798</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuRaw_Slip">
+    <property name="title">
+     <string>Raw Slip</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuGST_Slip">
+    <property name="title">
+     <string>GST Slip</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHome">
+    <property name="title">
+     <string>Home</string>
+    </property>
+   </widget>
+   <addaction name="menuHome"/>
+   <addaction name="menuRaw_Slip"/>
+   <addaction name="menuGST_Slip"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

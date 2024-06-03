@@ -1,9 +1,104 @@
-Backend
+First Step - 
 1. Installed docker desktop 4.30.0
-2. Nvidia/pytorch image - nvcr.io/nvidia/pytorch:24.05-py3
+2. docker pull nvcr.io/nvidia/pytorch:24.05-py3
+3. docker run -it --ipc=host -p8000:8000 -p8001:8001 -p8002:8002 -e DISPLAY=host.docker.internal:0.0 -v E:\CHEELDHAR:/cheeldhar pytorch/pytorch:latest
+4. python3 -m pip install --upgrade pip
+5. python 3.10.13 version
 
-Frontend
-1. Created vrenv
-2. Installed Python 3.10.7
-3. Installed Flet using pip install flet
-4. 
+Frontend -
+1. python -m pip install --upgrade pip setuptools virtualenv
+2. virtualenv frontvenv
+3. pyqt designer for windows - pip install pyqt6-tools
+4. pip install PyQt6
+5. pip install pyside6
+6. pyqt6-tools designer - to open designer
+7. Creating App now
+8. Saving UI files to Python files - pyuic6 python_ui.ui -o python_ui.py
+9. pyrcc5 filename.qrc -o filename.py
+10. 
+
+DataBase - 
+1. Create MySQL instance on GCP
+2. python -m pip install mysql-connector-python
+3. pip install gcloud
+4. (New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe") 
+   & $env:Temp\GoogleCloudSDKInstaller.exe
+5. python -m pip install cloud-sql-python-connector["pymysql"] SQLAlchemy
+6. gcloud auth application-default login
+7. customer Table Query : CREATE TABLE Customer (
+    CustomerId INT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    PhoneNumber VARCHAR(15),
+    EmailId VARCHAR(255),
+    Address TEXT,
+    GSTNumber VARCHAR(15)
+);
+8. Product Table Query : CREATE TABLE Product (
+    SKU_No INT UNIQUE,
+    Name VARCHAR(255) NOT NULL,
+    Category VARCHAR(255),
+    ProductDescription TEXT
+);
+9. Inventory Table Query : CREATE TABLE
+  Inventory ( InventoryID INT
+  PRIMARY KEY
+    ,
+    Quantity INT,
+    ManufacturingDate DATE,
+    ExpiryDate DATE,
+    BillDate DATE,
+    HSNNumber VARCHAR(15),
+    CostPrice DECIMAL(10,
+      2),
+    ExtraCostPrice DECIMAL(10,
+      2),
+    MinimumSellingPrice DECIMAL(10,
+      2),
+    MaximumSellingPrice DECIMAL(10,
+      2),
+    GST_Percentage DECIMAL(5,
+      2),
+    PurchaseBillNo VARCHAR(255),
+    FirmName VARCHAR(255),
+    SupplierId INT,
+    SKU_No INT,
+  FOREIGN KEY
+    (SKU_No)
+  REFERENCES
+    Product(SKU_No) );
+10. Sale table Query: CREATE TABLE Sales (
+    SalesId INT PRIMARY KEY,
+    SKU_No INT,
+    Qty INT,
+    Discount DECIMAL(10, 2),
+    SellingPrice DECIMAL(10, 2),
+    TotalAmount DECIMAL(10, 2),
+    Firm VARCHAR(255),
+    GST_Percentage DECIMAL(5, 2),
+    TotalGST DECIMAL(10, 2),
+    FOREIGN KEY (SKU_No) REFERENCES Product(SKU_No)
+);
+11. Bill table Query : CREATE TABLE Bill (
+    BillID INT PRIMARY KEY,
+    CustomerId INT,
+    SalesId INT,
+    TotalBillAmount DECIMAL(10, 2),
+    CashPaidAmount DECIMAL(10, 2),
+    OnlinePaidAmount DECIMAL(10, 2),
+    RemainingAmount DECIMAL(10, 2),
+    FOREIGN KEY (CustomerId) REFERENCES Customer(CustomerId),
+    FOREIGN KEY (SalesId) REFERENCES Sales(SalesId)
+);
+12. CREATE PROCEDURE `shop_data`.GetCustomerDetails()
+BEGIN
+  SELECT * 
+  FROM Customer;
+END;
+
+    
+
+Backend - 
+1. pip install Flask
+2. pip install Flask-restful
+3. pip install --upgrade google-cloud-speech
+4. pip install pyaudio

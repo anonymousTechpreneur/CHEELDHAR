@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WelcomeWindow</class>
+ <widget class="QMainWindow" name="WelcomeWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>801</width>
+    <height>602</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.289773 rgba(184, 206, 224, 255), stop:0.932203 rgba(21, 76, 121, 255))</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:700; text-decoration: underline; color:#102246;&quot;&gt;AI Baniya&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; color:#102246;&quot;&gt;Welcomes You&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#102246;&quot;&gt;In your Personal&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt; font-weight:700; color:#102246;&quot;&gt;Accounts Management System&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>801</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAI_Baniya">
+    <property name="title">
+     <string>AI Baniya</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuData_Entry">
+    <property name="title">
+     <string>Data Entry</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuData_Analysis_2">
+    <property name="title">
+     <string>Data Analysis</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuInventory_Stock">
+    <property name="title">
+     <string>Inventory/Stock</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuData_Storage">
+    <property name="title">
+     <string>Data Storage</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuWorkforce">
+    <property name="title">
+     <string>Workforce</string>
+    </property>
+   </widget>
+   <addaction name="menuAI_Baniya"/>
+   <addaction name="menuData_Entry"/>
+   <addaction name="menuData_Analysis_2"/>
+   <addaction name="menuInventory_Stock"/>
+   <addaction name="menuData_Storage"/>
+   <addaction name="menuWorkforce"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </widget>
+  <action name="actionData_Entry">
+   <property name="text">
+    <string>Data Entry</string>
+   </property>
+  </action>
+  <action name="actionInventory_Stock">
+   <property name="text">
+    <string>Inventory/Stock</string>
+   </property>
+  </action>
+  <action name="actionRaw_Firm">
+   <property name="text">
+    <string>Raw Firm</string>
+   </property>
+  </action>
+  <action name="actionMain_Firms">
+   <property name="text">
+    <string>Main Firms</string>
+   </property>
+  </action>
+  <action name="actionFuture_Prediction">
+   <property name="text">
+    <string>Future Prediction</string>
+   </property>
+  </action>
+  <action name="actionCurrent_Stock_Analysis">
+   <property name="text">
+    <string>Current Stock Analysis</string>
+   </property>
+  </action>
+  <action name="actionData_Storage">
+   <property name="text">
+    <string>Data Storage</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
