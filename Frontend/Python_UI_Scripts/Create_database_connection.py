@@ -18,9 +18,10 @@ def connect():
     
     pool = sqlalchemy.create_engine(
         "mysql+pymysql://",
-        creator=getconn,)
+        creator=getconn,echo=True)
     
-    return pool.connect(), connector
+    return pool, connector
     
-def disconnect(connector):
-    connector.close()
+def disconnect(connector=None):
+    if connector:
+        connector.close()

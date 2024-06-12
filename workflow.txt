@@ -4,6 +4,10 @@ First Step -
 3. docker run -it --ipc=host -p8000:8000 -p8001:8001 -p8002:8002 -e DISPLAY=host.docker.internal:0.0 -v E:\CHEELDHAR:/cheeldhar pytorch/pytorch:latest
 4. python3 -m pip install --upgrade pip
 5. python 3.10.13 version
+6. pip install deepgram-sdk==3.*
+7. pip install python-dotenv
+8. pip install -U -q google-generativeai
+9. pip install IPython
 
 Frontend -
 1. python -m pip install --upgrade pip setuptools virtualenv
@@ -15,7 +19,10 @@ Frontend -
 7. Creating App now
 8. Saving UI files to Python files - pyuic6 python_ui.ui -o python_ui.py
 9. pyrcc5 filename.qrc -o filename.py
-10. 
+10. git clone https://github.com/deepgram/live-streaming-starter-kit.git
+11. pip install -r requirements.txt
+12. Install PortAudio if not working on Windows becasue Win already have it with PyAudio
+13. python test_suite.py -k "95fd6ada90a601b4fe4f8382266bbd87f4ce7b30" -i mic
 
 DataBase - 
 1. Create MySQL instance on GCP
@@ -94,6 +101,34 @@ BEGIN
   SELECT * 
   FROM Customer;
 END;
+13. CREATE PROCEDURE `shop_data`.addCustomer (
+  IN Id INT,
+  IN Name VARCHAR(255),
+  IN PhoneNumber VARCHAR(15),
+  IN EmailId VARCHAR(255),
+  IN Address TEXT,
+  IN GSTNumber VARCHAR(255)
+)
+BEGIN
+  SET PhoneNumber = IF(PhoneNumber = 'NULL', NULL, PhoneNumber);
+  SET EmailId = IF(EmailId = 'NULL', NULL, EmailId);
+  SET Address = IF(Address = 'NULL', NULL, Address);
+  SET GSTNumber = IF(GSTNumber = 'NULL', NULL, GSTNumber);
+
+  INSERT INTO Customer (CustomerId, Name, PhoneNumber, EmailId, Address, GSTNumber)
+  VALUES (Id, Name, PhoneNumber, EmailId, Address, GSTNumber);
+
+  SELECT * FROM Customer
+  WHERE CustomerId=Id;
+END;
+
+CALL addCustomer (
+  '0007',
+  'Gungun Shah',
+  '+919059395943',
+  NULL,
+  NULL,
+  NULL)
 
     
 
@@ -102,3 +137,24 @@ Backend -
 2. pip install Flask-restful
 3. pip install --upgrade google-cloud-speech
 4. pip install pyaudio
+
+
+# result = addCustomer("19","Kusum Agarwal")
+# print(result)
+
+# '''
+# Instructions:
+# 1. Your role is to extract meaningful data from user text input and check using fetchData tool if data exist or not.
+# 2. fetchData will return a dictionary with all required filled in list format.
+# 3. Example output of fetchData function : {'customerId': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19], 'Name': ['Shubham Udsaria', 'Ram Prasad', 'Kirodimal chandraprakash mittal', 'Kirodimal Agarwal', 'Kirodimal Agarwal', 'Shailesh Kumar', 'Gungun Shah', 'Raghav Kumar', 'Shailesh Kumar 
+# Ram', 'Shalu Mittal', 'Shailesh lodha', 'Juju lodha', 'Bulbul Shah', 'Gungun bulbul', 'Dharmendra Kumar', 'Dharmendra Kumar Agarwal', 
+# None, None, None, None], 'emailID': ['random@gmail.com', 'random1@gmail.com', 'random2@gmail.com', 'random3@gmail.com', 'random4@gmail.com', None, None, 'NULL', None, 'NULL', None, None, None, None, None, None, None, None, None], 'Address': ['Sardarshahar,Rajasthan', 
+# 'Sardarshahar,Rajasthan', 'Sardarshahar,Rajasthan', 'Sardarshahar,Rajasthan', 'Sardarshahar,Rajasthan', None, None, 'NULL', None, 'NULL', None, None, None, None, None, None, None, None, None], 'GSTNumber': ['AA0000000', 'AA0000001', 'AA0000002', 'AA0000003', 'AA0000004', None, None, 'NULL', None, 'NULL', None, None, None, None, None, None, None, None, None]}
+# 4. If exist then return True and data of that customer in json format.
+# 5. If customer does not exist then return False and customer details in json format from user query.
+# 6. Customer ID should be a interger value that is not already exist in fetchData Output.
+# 7. values that are not given pass them as None.
+# 8. Important Data Points are : Customer ID, Customer Name, Customer Phone Number, Email, address, gstNumber.
+# Output Format example: {"customerExist":True,"Customer_Id":10,"Customer_Name":"shubham","Customer_Phone_Number":"8696731092", "Email":"sudsaria94@gmail.com", "address":"munti kui", "gstNumber":"A000001"}
+# Input: 
+# '''

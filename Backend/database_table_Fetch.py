@@ -1,8 +1,8 @@
 import sqlalchemy
 
-from Create_database_connection import *
+from Frontend.Python_UI_Scripts import Create_database_connection
 
-db_conn, connector = connect()
+db_conn, connector = Create_database_connection.connect()
 results = db_conn.execute(sqlalchemy.text("CALL GetCustomerDetails();")).fetchall()
 
 for row in results:
@@ -10,7 +10,7 @@ for row in results:
     print(row.tuple)
     print(type(row))
     print(row[0])
-disconnect(connector)
+Create_database_connection.disconnect(connector)
 print("done")
 #   # create ratings table in our sandwiches database
 #   db_conn.execute(

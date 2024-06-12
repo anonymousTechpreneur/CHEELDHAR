@@ -1,4 +1,5 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtCore import QDateTime
 from PyQt6.QtGui import QPixmap
 import sqlalchemy
 #from Backend.Create_database_connection import *
@@ -8,16 +9,25 @@ from STTLibCall import *
 
 class Ui_RawSlip(object):
 
-    def GeminiOutput(self, db_conn):
-        pass
-
     def sttAPI(self):
-        Speech()
+        output = {'customerId':"",'Customer_Name':"",'Customer_Phone_Number':""}
+        output = Speech()
+        self.customer_details.append(str([output['customerId'],output['Customer_Name'],output['Customer_Phone_Number']]))
         print("Go to UI")
+
+    def update_combo_box(self):
+        """
+        Clears and repopulates the combo box with updated customer details.
+        """
+        self.CustomerDetailcomboBox.clear()
+        for customer_detail in self.customer_details:
+            print(customer_detail)
+            self.CustomerDetailcomboBox.addItem(str(customer_detail))
 
     def setupUi(self, RawSlip):
         # self.db_conn, self.connector = connect()
         # disconnect(self.connector)
+        self.customer_details = ["Select Customer"]
         RawSlip.setObjectName("RawSlip")
         RawSlip.resize(802, 600)
         RawSlip.setStyleSheet("background:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 255))")
@@ -85,10 +95,10 @@ class Ui_RawSlip(object):
         font.setBold(True)
         item.setFont(font)
         self.DataEntryTableWidget.setHorizontalHeaderItem(7, item)
-        self.timeInput = QtWidgets.QTimeEdit(parent=self.centralwidget)
+        self.timeInput = QtWidgets.QTimeEdit(QDateTime.currentDateTime().time(),parent=self.centralwidget)
         self.timeInput.setGeometry(QtCore.QRect(500, 50, 81, 31))
         self.timeInput.setObjectName("timeInput")
-        self.dateInput = QtWidgets.QDateEdit(parent=self.centralwidget)
+        self.dateInput = QtWidgets.QDateEdit(QDateTime.currentDateTime().date(),parent=self.centralwidget)
         self.dateInput.setGeometry(QtCore.QRect(400, 50, 91, 31))
         self.dateInput.setObjectName("dateInput")
         self.SaveData = QtWidgets.QPushButton(parent=self.centralwidget)
@@ -177,6 +187,7 @@ class Ui_RawSlip(object):
         self.menubar.addAction(self.menuRaw_Slip.menuAction())
         self.menubar.addAction(self.menuGST_Slip.menuAction())
         self.AudioInputPushButton.clicked.connect(lambda:self.sttAPI())
+        self.pushButtonAddCustomer.clicked.connect(self.update_combo_box)
 
         self.retranslateUi(RawSlip)
         QtCore.QMetaObject.connectSlotsByName(RawSlip)

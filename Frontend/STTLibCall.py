@@ -4,10 +4,12 @@ import time
 from google.cloud import speech
 import pyaudio
 import queue
+from Python_UI_Scripts.Gemini_SQL_output import gemini_add_data
+# from Python_UI_Scripts.Create_database_connection import *
 
 # Audio recording parameters
-STREAMING_LIMIT = 240000  # 4 minutes
-SAMPLE_RATE = 16000
+STREAMING_LIMIT = 100000  # 4 minutes
+SAMPLE_RATE = 10000
 CHUNK_SIZE = int(SAMPLE_RATE / 10)  # 100ms
 
 RED = "\033[0;31m"
@@ -185,7 +187,7 @@ class ResumableMicrophoneStream:
             yield b"".join(data)
 
 
-def listen_print_loop(responses: object, stream: object) -> None:
+def listen_print_loop(responses: object, stream: object):
     """Iterates through server responses and prints them.
 
     The responses passed is a generator that will block until a response
@@ -204,6 +206,7 @@ def listen_print_loop(responses: object, stream: object) -> None:
         responses: The responses returned from the API.
         stream: The audio stream to be processed.
     """
+    output = []
     for response in responses:
         if get_current_time() - stream.start_time > STREAMING_LIMIT:
             stream.start_time = get_current_time()
@@ -250,6 +253,13 @@ def listen_print_loop(responses: object, stream: object) -> None:
             # one of our keywords.
             if re.search(r"\b(exit|quit)\b", transcript, re.I):
                 sys.stdout.write(YELLOW)
+                output = gemini_add_data(transcript)
+                sys.stdout.write("Exiting...\n")
+                stream.closed = True
+                break
+            if re.search(r"\b(done|close)\b", transcript, re.I):
+                sys.stdout.write(YELLOW)
+                output = gemini_add_data(transcript)
                 sys.stdout.write("Exiting...\n")
                 stream.closed = True
                 break
@@ -259,14 +269,28 @@ def listen_print_loop(responses: object, stream: object) -> None:
             sys.stdout.write(str(corrected_time) + ": " + transcript + "\r")
 
             stream.last_transcript_was_final = False
+            if re.search(r"\b(exit|quit)\b", transcript, re.I):
+                sys.stdout.write(YELLOW)
+                output = gemini_add_data(transcript)
+                sys.stdout.write("Exiting...\n")
+                stream.closed = True
+                break
+            if re.search(r"\b(done|close)\b", transcript, re.I):
+                sys.stdout.write(YELLOW)
+                output = gemini_add_data(transcript)
+                sys.stdout.write("Exiting...\n")
+                stream.closed = True
+                break
+    return output
 
 def Speech() -> None:
     """start bidirectional streaming from microphone input to speech API"""
+    output = []
     client = speech.SpeechClient()
     config = speech.RecognitionConfig(
         encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
         sample_rate_hertz=SAMPLE_RATE,
-        language_code="en-US",
+        language_code="en-IN",
         #alternative_language_codes=["en-US"],   #,"hi-IN"],
         max_alternatives=1,
     )
@@ -300,7 +324,7 @@ def Speech() -> None:
             responses = client.streaming_recognize(streaming_config, requests)
 
             # Now, put the transcription responses to use.
-            listen_print_loop(responses, stream)
+            output = listen_print_loop(responses, stream)
 
             if stream.result_end_time > 0:
                 stream.final_request_end_time = stream.is_final_end_time
@@ -313,6 +337,8 @@ def Speech() -> None:
             if not stream.last_transcript_was_final:
                 sys.stdout.write("\n")
             stream.new_stream = True
+    print("Speech Output: ",output)
+    return output
 
 
 # if __name__ == "__main__":
