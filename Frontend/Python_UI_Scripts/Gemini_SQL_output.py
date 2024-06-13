@@ -7,7 +7,7 @@ import sqlalchemy
 
 from Python_UI_Scripts.Create_database_connection import * 
 
-def gemini_init(key='AIzaSyCBqcWrhePL-lE76cnWjSWALO_kiDCLQRQ'):
+def gemini_init(key=''):
     genai.configure(api_key=key)
     model = genai.GenerativeModel(model_name='gemini-1.5-flash')
     chat = model.start_chat(enable_automatic_function_calling=True)
